@@ -1,4 +1,4 @@
-package com.bank.hackerearth;
+/*package com.bank.hackerearth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,3 +14,4 @@ public class HackerEarthApplicationTests {
 	}
 
 }
+*/
