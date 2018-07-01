@@ -8,15 +8,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bank.hackerearth.beans.Customer;
 import com.bank.hackerearth.service.AccountBalanceService;
+import com.bank.hackerearth.validator.Validator;
 
 @RestController
 public class BalanceController {
 
 	@Autowired
 	private AccountBalanceService accountBalanceService;
+	@Autowired
+	Validator validator;
 
 	@RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
-	public Customer getBalance(@PathVariable(value = "customerId") int customerId) {
+	public Customer getBalance(@PathVariable(value = "customerId") Integer customerId) {
+		
+		validator.isIdValid(customerId);
+		
 		Customer balance = accountBalanceService.getBalance(customerId);
 		return balance;
 

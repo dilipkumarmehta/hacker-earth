@@ -14,8 +14,15 @@ public class ExceptionHandelerAdvice extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(MessageNotFountException.class)
 	public ResponseEntity<Message> messageIdNotFount(MessageNotFountException ex) {
 
-		Message msg = new Message("404", "Message id is not Found");
+		Message msg = new Message("404", "Message id is not Found in DB");
 
+		return new ResponseEntity<Message>(msg, HttpStatus.NOT_FOUND);
+
+	}
+
+	@ExceptionHandler(InvalidMessageIdException.class)
+	public ResponseEntity<Message> invalidMessageId(InvalidMessageIdException ex) {
+		Message msg = new Message("404", "invalid MessageId Please check your MessageId");
 		return new ResponseEntity<Message>(msg, HttpStatus.NOT_FOUND);
 
 	}
