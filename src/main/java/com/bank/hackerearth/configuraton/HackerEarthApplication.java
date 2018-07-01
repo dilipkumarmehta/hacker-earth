@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.bank.hackerearth.api.BalanceController;
-
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -15,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-@ComponentScan(basePackageClasses=BalanceController.class)
+@ComponentScan(basePackages="com.bank.hackerearth")
 public class HackerEarthApplication {
 
 	public static void main(String[] args) {
@@ -26,10 +24,7 @@ public class HackerEarthApplication {
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors
-				.basePackage("com.bank.hackerearth"))
-				.paths(PathSelectors
-				.any())
-				.build();
+				.basePackage("com.bank.hackerearth")).paths(PathSelectors.any()).build();
 
 	}
 

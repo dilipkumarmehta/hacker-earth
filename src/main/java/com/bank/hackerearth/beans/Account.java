@@ -1,7 +1,7 @@
 package com.bank.hackerearth.beans;
 
 public class Account {
-	private int accountId;
+	private Integer accountId;
 	private String accountType;
 	private int balance;
 
@@ -9,18 +9,18 @@ public class Account {
 
 	}
 
-	public Account(int accountId, String accountType, int balance) {
+	public Account(Integer accountId, String accountType, int balance) {
 		super();
 		this.accountId = accountId;
 		this.accountType = accountType;
 		this.balance = balance;
 	}
 
-	public int getAccountId() {
+	public Integer getAccountId() {
 		return accountId;
 	}
 
-	public void setAccountId(int accountId) {
+	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
 	}
 
