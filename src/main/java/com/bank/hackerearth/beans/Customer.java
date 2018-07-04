@@ -37,5 +37,4 @@ public class Customer {
 		return "Customer [messageId=" + messageId + ", accounts=" + accounts + "]";
 	}
 
-	
 }

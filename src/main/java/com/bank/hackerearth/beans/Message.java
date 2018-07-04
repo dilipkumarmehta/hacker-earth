@@ -1,29 +1,30 @@
 package com.bank.hackerearth.beans;
 
 public class Message {
-	private String messgeCode;
-	private String messgeDescription;
 
-	public Message(String messgeCode, String messgeDescription) {
+	private String statusCode;
+	private String failureReason;
+
+	public Message(String statusCode, String failureReason) {
 		super();
-		this.messgeCode = messgeCode;
-		this.messgeDescription = messgeDescription;
+		this.statusCode = statusCode;
+		this.failureReason = failureReason;
 	}
 
-	public String getMessgeCode() {
-		return messgeCode;
+	public String getStatusCode() {
+		return statusCode;
 	}
 
-	public void setMessgeCode(String messgeCode) {
-		this.messgeCode = messgeCode;
+	public void setStatusCode(String statusCode) {
+		this.statusCode = statusCode;
 	}
 
-	public String getMessgeDescription() {
-		return messgeDescription;
+	public String getFailureReason() {
+		return failureReason;
 	}
 
-	public void setMessgeDescription(String messgeDescription) {
-		this.messgeDescription = messgeDescription;
+	public void setFailureReason(String failureReason) {
+		this.failureReason = failureReason;
 	}
 
 }
