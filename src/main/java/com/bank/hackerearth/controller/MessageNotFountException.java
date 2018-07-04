@@ -1,16 +1,10 @@
 package com.bank.hackerearth.controller;
 
 public class MessageNotFountException extends RuntimeException {
-	/**
-	 * 
-	 */
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	public Integer mesageId;
+	public String mesageId;
 
-	public MessageNotFountException(Integer mesageId) {
+	public MessageNotFountException(String mesageId) {
 		super();
 		this.mesageId = mesageId;
 	}

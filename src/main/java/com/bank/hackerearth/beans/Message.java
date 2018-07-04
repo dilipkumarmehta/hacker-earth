@@ -1,7 +1,12 @@
 package com.bank.hackerearth.beans;
 
-public class Message {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "customerAccount")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Message {
 	private String statusCode;
 	private String failureReason;
 

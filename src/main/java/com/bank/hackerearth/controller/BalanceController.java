@@ -19,7 +19,8 @@ public class BalanceController {
 	Validator validator;
 
 	@RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET, produces = "application/json", consumes = "application/json")
-	public Customer getBalance(@PathVariable(value = "customerId") Integer customerId) {
+	public Customer getBalance(@PathVariable(value = "customerId") String customerId) {
+		System.out.println("*******************"+customerId.length());
 		validator.isIdValid(customerId);
 		Customer balance = accountBalanceService.getBalance(customerId);
 		return balance;

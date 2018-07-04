@@ -10,6 +10,7 @@ import com.bank.hackerearth.beans.Message;
 import com.bank.hackerearth.beans.MessageCode;
 
 @ControllerAdvice
+
 public class ExceptionHandelerAdvice extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(MessageNotFountException.class)
@@ -17,7 +18,8 @@ public class ExceptionHandelerAdvice extends ResponseEntityExceptionHandler {
 
 		Message msg = new Message(MessageCode.NO_DATA_FOUND.getStatusCode(),
 				MessageCode.NO_DATA_FOUND.getStatusDescription() + " : " + ex.getMessage());
-		return new ResponseEntity<Message>(msg, HttpStatus.NOT_FOUND);
+		new ResponseEntity<Message>(msg, HttpStatus.NOT_FOUND);
+		return null;
 
 	}
 

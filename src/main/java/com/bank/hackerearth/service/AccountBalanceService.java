@@ -7,5 +7,5 @@ import com.bank.hackerearth.beans.Customer;
 @Service
 public interface AccountBalanceService {
 
-	public Customer getBalance(Integer messageId);
+	public Customer getBalance(String messageId);
 }

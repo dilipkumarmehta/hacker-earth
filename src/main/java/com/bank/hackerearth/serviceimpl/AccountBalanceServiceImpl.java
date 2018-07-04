@@ -3,6 +3,10 @@ package com.bank.hackerearth.serviceimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -25,7 +29,7 @@ public class AccountBalanceServiceImpl implements AccountBalanceService {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public Customer getBalance(Integer messageId) {
+	public Customer getBalance(String messageId) {
 		Customer findOne = null;
 		Query query = new Query(Criteria.where("messageId").is(messageId));
 		System.out.println(query);
@@ -40,8 +44,8 @@ public class AccountBalanceServiceImpl implements AccountBalanceService {
 		al.add(a1);
 		al.add(a2);
 
-		Customer c = new Customer(22, al);
-		// mongoTemplate.save(c, "Account");
+		Customer c = new Customer(messageId, al);
+		mongoTemplate.save(c, "Account");
 
 		if (findOne == null) {
 			throw new MessageNotFountException(messageId);
