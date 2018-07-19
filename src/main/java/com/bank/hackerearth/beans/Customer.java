@@ -14,6 +14,7 @@ public class Customer {
 	private List<Account> accounts;
 
 	public Customer() {
+		
 
 	}
 
