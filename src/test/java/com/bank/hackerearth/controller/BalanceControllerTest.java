@@ -1,7 +1,5 @@
 package com.bank.hackerearth.controller;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,7 +26,7 @@ public class BalanceControllerTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
 	}
 
 }
